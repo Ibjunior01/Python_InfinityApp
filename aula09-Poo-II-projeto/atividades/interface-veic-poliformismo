@@ -1,0 +1,30 @@
+from abc import ABC, abstractmethod
+
+class Veiculo(ABC):
+    @abstractmethod
+    def acelerar(self):
+        pass
+
+    @abstractmethod
+    def frear(self):
+        pass
+
+class Carro(Veiculo):
+    def acelerar(self):
+        print("Carro acelerando...")
+
+    def frear(self):
+        print("Carro freando...")
+
+class Bicicleta(Veiculo):
+    def acelerar(self):
+        print("Bicicleta pedalando...")
+
+    def frear(self):
+        print("Bicicleta freando...")
+
+# Polimorfismo
+veiculos = [Carro(), Bicicleta()]
+for v in veiculos:
+    v.acelerar()
+    v.frear()
